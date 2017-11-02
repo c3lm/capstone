@@ -1,3 +1,12 @@
+/* general comments to CSS file
+in general the code is not opitimised,
+it could be changed in the way that less styling
+is applied in CSS due to optimization of classes.
+
+Color of text is not accurate as in codeacademy example,
+text heights as well.
+*/
+
 
 * {
   box-sizing: border-box;
@@ -8,7 +17,6 @@ html, body {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   color: black;
-
 }
 
 /* main text styling */
@@ -78,6 +86,7 @@ nav ul li a {
   padding: 32px 24px;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .image {
@@ -88,7 +97,7 @@ nav ul li a {
 .image img {
   display: block;
   height: auto;
-  width: 100%;
+  max-width: 100%;
 }
 
 .banner-text {
@@ -113,8 +122,6 @@ button {
   border: none;
 }
 
-
-
 /* information section */
 #information-main {
   background-color: white;
@@ -122,8 +129,6 @@ button {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
-
 }
 
 /* left column */
@@ -134,7 +139,7 @@ button {
 
 .information-left-column img {
   height: auto;
-  width: 100%;
+  max-width: 100%;
   display: block;
 }
 
@@ -155,17 +160,8 @@ button {
   display: flex;
   flex-direction: column;
   width: 40%;
-
+  overflow: hidden;
 }
-
-.information-row-1 img, .information-row-2 img, .information-row-3 img {
-  display: block;
-  height: auto;
-  width: 100%;
-  margin: 16px 16px;
-  padding: 0 0;
-}
-
 
 .information-row-1, .information-row-2, .information-row-3 {
   display: flex;
@@ -173,8 +169,18 @@ button {
 
 }
 
+
 .information-row-3 {
   background-color: lightgray;
+}
+
+.information-row-1 img, .information-row-2 img, .information-row-3 img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 16px 16px;
+  padding: 0 0;
+  /* why do this images are not responsive as rest of images? */
 }
 
 .row-1-text, .row-2-text, .row-3-text {
@@ -231,7 +237,7 @@ button {
 }
 
 .box-1 img, .box-2 img, .box-3 img, .box-4 img, .box-5 img, .box-6 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   padding: 0;
   margin: 0;
@@ -261,10 +267,8 @@ button {
 .video {
   display: flex;
   justify-content: space-between;
-}
+  margin-left: 24px;
 
-.video video {
-  width: 60%;
 }
 
 
@@ -272,6 +276,19 @@ button {
   display: flex;
   width: 60%;
   flex-direction: column;
+  padding-bottom: 32px;
+  margin-right: 24px;
+}
+
+.video-left p {
+  padding-top: 8px;
+}
+
+.video video {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin-bottom: 24px;
 }
 
 /* right video column */
@@ -282,6 +299,35 @@ button {
 
 }
 
+.video-box-1, .video-box-2 {
+  display: flex;
+
+
+}
+
+.video-box-1 {
+  background-color: lightgray;
+
+}
+
+
+.video-box-1 img, .video-box-2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px 16px;
+}
+
+.video-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 16px;
+  width: 60%;
+}
+
+
 /* footer section */
 #footer {
   display: flex;
@@ -289,35 +335,125 @@ button {
   justify-content: space-between;
   margin: 0 24px;
   border-top: 1px solid lightgrey;
-
-}
-
-.footer-1 p {
-  padding-top: 16px;
+  padding-top: 12px;
 }
 
 .footer-2 a {
   text-decoration: none;
-  padding-top: 16px;
   color: black;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Mobile media queries */
-@media screen and ( ) {
+@media only screen and (max-width: 885px) {
+  body {
+    overflow-x: hidden;
+  }
 
-}
+/* navigation bar */
+  nav {
+    display: none;
+  }
+
+/* banner section */
+  #banner {
+    flex-wrap: wrap;
+
+  }
+
+  .image {
+    width: auto;
+  }
+
+  .banner-text {
+    width: 100%;
+    margin-left: 16px;
+    margin-top: 32px;
+  }
+
+  .banner-text h2 {
+    margin-top: 24px;
+  }
+
+  button {
+    width: 80%;
+    margin-top: 24px;
+  }
+
+/* informaton section */
+  .information-left-column {
+    display: none;
+  }
+
+  .information-right-column {
+    width: auto;
+  }
+
+  .information-row-1, .information-row-2, .information-row-3 {
+    flex-wrap: wrap;
+  }
+
+  .information-row-1 img, .information-row-2 img, .information-row-3 img {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .row-1-text, .row-2-text, .row-3-text {
+
+  }
+
+  /* learning section */
+  .box-1 p, .box-2 p, .box-3 p, .box-4 p, .box-5 p, .box-6 p {
+    display: none;
+  }
+
+  #learning {
+    background-color: white;
+  }
+
+  .box-1 img, .box-2 img, .box-3 img, .box-4 img, .box-5 img, .box-6 img {
+    display: none;
+  }
+
+  .learning-row-1, .learning-row-2 {
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+  }
+
+  .box-1, .box-2, .box-3, .box-4, .box-5, .box-6 {
+    width: 100vw;
+    background-color: lightgray;
+  }
+
+  .box-1 h2, .box-2 h2, .box-3 h2, .box-4 h2, .box-5 h2, .box-6 h2 {
+    padding-top: 16px;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+/* video section */
+  .video-right {
+    display: none;
+  }
+
+  .video-left {
+    display: block;
+    width: 100%;
+  }
+
+  .video-left h1, .video-left p {
+    display: none;
+  }
+
+
+/* footer section */
+  .footer-2 {
+    display: none;
+  }
+
+} /* end of media */
 
 
 
