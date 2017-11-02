@@ -1,12 +1,17 @@
-/* general comments to CSS file
-in general the code is not opitimised,
-it could be changed in the way that less styling
-is applied in CSS due to optimization of classes.
+/* general comments to CSS file:
+some margins and paddings are not exactly equal as in the starting material,
+the font and its size is also not adequate as in the starting material,
+I was more focused on the general layout and to make it responsive.
 
-Color of text is not accurate as in codeacademy example,
-text heights as well.
+Please let me know how to optize the number of css code by using
+common rules for part of the website, and review it from the top perspective,
+what are the major parts that need to be corrected?
+
+I could not spend more time on that project as I am participating also
+on the js/react course. But is that possible to receive from codeacademy code for
+that project to make an comparision how this should be done in line with best coding
+practice? It will be very beneficial.
 */
-
 
 * {
   box-sizing: border-box;
@@ -78,6 +83,11 @@ nav ul li a {
   font-size: 1.1rem;
 }
 
+nav#mobile {
+  display: none;
+}
+
+
 /* main banner section */
 #banner {
   background-color: lightgray;
@@ -86,7 +96,6 @@ nav ul li a {
   padding: 32px 24px;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .image {
@@ -166,7 +175,6 @@ button {
 .information-row-1, .information-row-2, .information-row-3 {
   display: flex;
   flex-direction: row;
-
 }
 
 
@@ -180,7 +188,6 @@ button {
   max-width: 100%;
   margin: 16px 16px;
   padding: 0 0;
-  /* why do this images are not responsive as rest of images? */
 }
 
 .row-1-text, .row-2-text, .row-3-text {
@@ -204,7 +211,6 @@ button {
   text-decoration: none;
   color: blue;
 }
-
 
 /* learning section */
 #learning {
@@ -268,9 +274,7 @@ button {
   display: flex;
   justify-content: space-between;
   margin-left: 24px;
-
 }
-
 
 .video-left {
   display: flex;
@@ -296,20 +300,15 @@ button {
   display: flex;
   width: 40%;
   flex-direction: column;
-
 }
 
 .video-box-1, .video-box-2 {
   display: flex;
-
-
 }
 
 .video-box-1 {
   background-color: lightgray;
-
 }
-
 
 .video-box-1 img, .video-box-2 img {
   max-width: 100%;
@@ -324,7 +323,15 @@ button {
   align-items: flex-start;
   justify-content: center;
   padding-left: 16px;
-  width: 60%;
+  max-width: 40%;
+}
+
+.video-text h1 {
+  font-size: 1.5rem;
+}
+
+.video-text p {
+  font-size: 1.2rem;
 }
 
 
@@ -343,22 +350,37 @@ button {
   color: black;
 }
 
-
 /* Mobile media queries */
 @media only screen and (max-width: 885px) {
   body {
     overflow-x: hidden;
   }
 
-/* navigation bar */
-  nav {
+/* logo */
+  .logo h1 {
     display: none;
+  }
+
+/* navigation bar */
+  header {
+    height: 64px;
+  }
+
+  nav#full-size {
+    display: none;
+  }
+
+  nav#mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin-right: 24px;
   }
 
 /* banner section */
   #banner {
     flex-wrap: wrap;
-
   }
 
   .image {
@@ -376,7 +398,7 @@ button {
   }
 
   button {
-    width: 80%;
+    width: 100%;
     margin-top: 24px;
   }
 
@@ -398,10 +420,6 @@ button {
     height: 50vh;
   }
 
-  .row-1-text, .row-2-text, .row-3-text {
-
-  }
-
   /* learning section */
   .box-1 p, .box-2 p, .box-3 p, .box-4 p, .box-5 p, .box-6 p {
     display: none;
@@ -418,7 +436,6 @@ button {
   .learning-row-1, .learning-row-2 {
     flex-wrap: wrap;
     margin: 0 auto;
-
   }
 
   .box-1, .box-2, .box-3, .box-4, .box-5, .box-6 {
@@ -447,30 +464,9 @@ button {
     display: none;
   }
 
-
 /* footer section */
   .footer-2 {
     display: none;
   }
 
 } /* end of media */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* footer section */
